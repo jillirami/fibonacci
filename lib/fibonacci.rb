@@ -5,8 +5,12 @@
 # ....
 # e.g. 6th fibonacci number is 8
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def fibonacci(n)
-  raise NotImplementedError
+  sequence = [0, 1]
+  n.times do |i|
+    sequence[i + 2] = sequence[i] + sequence[i + 1]
+  end
+  return sequence
 end
