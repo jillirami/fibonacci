@@ -8,9 +8,15 @@
 # Time complexity: O(n)
 # Space complexity: O(n)
 def fibonacci(n)
-  sequence = [0, 1]
-  n.times do |i|
-    sequence[i + 2] = sequence[i] + sequence[i + 1]
+  if n.nil? || n < 0
+    raise ArgumentError
+  else
+    sequence = [0, 1]
+    n.times do |i|
+      sequence[i + 2] = sequence[i] + sequence[i + 1]
+    end
+    fibonacci = sequence[n]
   end
-  return sequence
+  
+  return fibonacci
 end
